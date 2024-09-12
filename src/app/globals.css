@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+  display: none;
+ 
+
+}
+body, html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.logo-box{
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  margin-left: 0.5%;
+  width: 99%
+}
+
+
+/* text animation */
+h1 {
+  font-size: 9vmin;
+  color: #8bf;
+  text-align: left;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  margin: 1rem 0 1rem 2rem;
+}
+
+/* Typewriter effect 1 */
+@keyframes typing {
+  0.0000%, 27.3488% { content: ""; }
+  1.1395%, 26.2093% { content: "L"; }
+  2.2791%, 25.0698% { content: "Li"; }
+  3.4186%, 23.9302% { content: "Liv"; }
+  4.5581%, 22.7907% { content: "Live"; }
+  4.5581%, 22.7907% { content: "Lives"; }
+
+  30.7674%, 51.2791% { content: ""; }
+  31.9070%, 50.1395% { content: "S"; }
+  33.0465%, 49.0000% { content: "Sm"; }
+  34.1860%, 47.8605% { content: "Smi"; }
+  35.3256%, 46.7209% { content: "Smile"; } 
+  36.3256%, 46.7209% { content: "Smiles"; } 
+
+  54.6977%, 75.2093% { content: ""; }
+  55.8372%, 74.0698% { content: "L"; }
+  56.9767%, 72.9302% { content: "Li"; }
+  58.1163%, 71.7907% { content: "Liv"; }
+  59.2558%, 70.6512% { content: "Live"; }
+  60.2558%, 70.6512% { content: "Lives"; }
+
+  78.6279%, 96.8605% { content: ""; }
+  79.7674%, 95.7209% { content: "S"; }
+  80.9070%, 94.5814% { content: "Sm"; }
+  82.0465%, 93.4419% { content: "Smi"; }
+  83.1860%, 92.3023% { content: "Smile"; }
+  84.1860%, 92.3023% { content: "Smiles"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "Saving Smiles"; }
+  }
+
+  .typewriter::after {
+    animation: sequencePopup 12s linear infinite;
+ 
+}
+}
+
+
